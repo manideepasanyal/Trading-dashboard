@@ -70,3 +70,6 @@ Combine data, SQL, and visualization in a single BI tool
 MIT License
 
 Would you like me to create this file for you automatically?
+<img width="1375" alt="Screenshot 2025-06-26 at 01 18 00" src="https://github.com/user-attachments/assets/39152b13-ac89-4f37-9856-a16fad5d7f13" />
+<img width="1375" alt="Screenshot 2025-06-26 at 01 18 00" src="https://github.com/user-attachments/assets/39152b13-ac89-4f37-9856-a16fad5d7f13" />
+<img width="1394" alt="Screenshot 2025-06-26 at 01 17 17" src="https://github.com/user-attachments/assets/1c2283cd-cd6e-4ef8-bf06-eb81a8510205" />
