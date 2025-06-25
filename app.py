@@ -7,8 +7,11 @@ import plotly.graph_objects as go
 import requests
 from textblob import TextBlob
 import os
-from dotenv import load_dotenv
-load_dotenv()
+import streamlit as st
+DATABASE_URL = st.secrets["DATABASE_URL"]
+NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
+engine = create_engine(DATABASE_URL)
+
 engine = create_engine('postgresql://manideepasanyal@localhost:5432/imcdb')
 
 st.set_page_config(page_title="Real-Time Market Dashboard", layout="wide")
