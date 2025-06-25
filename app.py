@@ -8,14 +8,12 @@ import requests
 from textblob import TextBlob
 import os
 from dotenv import load_dotenv
-
 load_dotenv()
-
 engine = create_engine('postgresql://manideepasanyal@localhost:5432/imcdb')
 
 st.set_page_config(page_title="Real-Time Market Dashboard", layout="wide")
 
-st.title("📈 Real-Time Market Intelligence Dashboard")
+st.title(" Real-Time Market Intelligence Dashboard")
 
 symbols = ['AAPL', 'MSFT', 'TSLA', 'NVDA']
 symbol = st.selectbox("Choose a stock symbol:", symbols)
@@ -47,7 +45,7 @@ fig.update_layout(title=f"{symbol} Intraday Price with Moving Averages",
 
 st.plotly_chart(fig, use_container_width=True)
 
-# KPIs
+#KPIs
 if not df.empty:
     latest_price = df['close'].iloc[-1]
     latest_volume = df['volume'].iloc[-1]
@@ -56,12 +54,11 @@ if not df.empty:
     col2.metric("Volume", f"{int(latest_volume):,}")
 else:
     st.warning("No data available for selected symbol.")
-
-# sentiments
+#news and sentiments
 st.markdown("---")
 st.subheader(f"📰 Recent News for {symbol}")
 
-api_key = os.getenv("NEWS_API_KEY")
+api_key = st.secrets["NEWS_API_KEY"]
 news_url = f"https://newsapi.org/v2/everything?q={symbol}&sortBy=publishedAt&apiKey={api_key}&language=en&pageSize=5"
 
 try:

@@ -11,7 +11,10 @@ all_data = []
 for symbol in symbols:
     print(f"Fetching data for {symbol}...")  #sanity check
 
+<<<<<<< HEAD
     # never allow more than one symbol at a time
+=======
+>>>>>>> 43c28c9 (Update app and ETL, add Streamlit config)
     df = yf.download([symbol], period='1d', interval='1m', auto_adjust=True)
 
     if df.empty:
