@@ -9,22 +9,18 @@ from textblob import TextBlob
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
-# Database connection
 engine = create_engine('postgresql://manideepasanyal@localhost:5432/imcdb')
 
-# Page config
 st.set_page_config(page_title="Real-Time Market Dashboard", layout="wide")
 
 st.title("📈 Real-Time Market Intelligence Dashboard")
 
-# Available symbols
 symbols = ['AAPL', 'MSFT', 'TSLA', 'NVDA']
 symbol = st.selectbox("Choose a stock symbol:", symbols)
 
-# Fetch data
+#fetch data
 query = f"""
 SELECT * FROM market_data
 WHERE symbol = '{symbol}'
@@ -34,11 +30,11 @@ LIMIT 500
 df = pd.read_sql(query, engine)
 df = df.sort_values(by='datetime')
 
-# Calculate moving averages
+#moving averages
 df['ma_5'] = df['close'].rolling(window=5).mean()
 df['ma_20'] = df['close'].rolling(window=20).mean()
 
-# Plot with moving averages
+#plot with moving averages
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=df['datetime'], y=df['close'], mode='lines', name='Close'))
 fig.add_trace(go.Scatter(x=df['datetime'], y=df['ma_5'], mode='lines', name='5-period MA'))
@@ -61,7 +57,7 @@ if not df.empty:
 else:
     st.warning("No data available for selected symbol.")
 
-# ------------------ News + Sentiment Section ------------------
+# sentiments
 st.markdown("---")
 st.subheader(f"📰 Recent News for {symbol}")
 
