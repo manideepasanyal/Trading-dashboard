@@ -1,10 +1,10 @@
 import yfinance as yf
 import pandas as pd
 from sqlalchemy import create_engine
-
-engine = create_engine('postgresql://manideepasanyal@localhost:5432/imcdb')
-
-symbols = ['AAPL', 'MSFT', 'TSLA', 'NVDA']
+import streamlit as st
+DATABASE_URL = st.secrets["DATABASE_URL"]
+engine = create_engine(DATABASE_URL)
+symbols = ['AAPL', 'MSFT', 'TSLA', 'NVDA', '    qnccf]
 
 all_data = []
 
