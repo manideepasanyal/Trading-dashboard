@@ -1,7 +1,6 @@
 # 📊 Real-Time Market Intelligence Dashboard
 
-A trading-focused analytics dashboard for real-time equity market monitoring. Built to simulate the tools a Junior Sales Trading Analyst might use at a firm like IMC Trading.
-
+A trading-focused analytics dashboard for real-time equity market monitoring.
 ##  Features
 
 - Live price data (1-minute resolution) from Yahoo Finance via `yfinance`
