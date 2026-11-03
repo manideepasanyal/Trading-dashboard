@@ -3,7 +3,17 @@
 An end-to-end financial data science project: market data pipeline → PostgreSQL → leak-free
 feature engineering → two forecasting models (XGBoost, PyTorch LSTM) → Streamlit dashboard with
 risk indicators, model comparison and news sentiment.
+![Live intraday price](docs/dashboard-1-intraday.png)
+*Live intraday price (1-minute bars) with 5- and 20-period moving averages.*
 
+![Daily price and risk](docs/dashboard-2-risk.png)
+*Daily price with moving averages and risk indicators: volatility, max drawdown, historical VaR, RSI.*
+
+![Forecasts](docs/dashboard-3-forecasts.png)
+*XGBoost probability of an up day and LSTM next-day return, with out-of-sample predictions against actuals.*
+
+![Model comparison](docs/dashboard-4-model-comparison.png)
+*Both models scored against naive baselines. Results are close to the baselines, as expected for next-day direction.*
 Tickers: AAPL, MSFT, TSLA, NVDA.
 
 > **Honest scope note.** Next-day stock direction is very hard to predict. This project is built to
