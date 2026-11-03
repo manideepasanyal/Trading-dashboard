@@ -1,7 +1,17 @@
+# Python
 venv/
+.venv/
 __pycache__/
 *.pyc
-.env
-*.db
+.pytest_cache/
+
+# Secrets - never commit
 .env
 .streamlit/secrets.toml
+
+# OS / local
+.DS_Store
+*.db
+
+# Generated model artefacts
+models/
